@@ -8,10 +8,10 @@ this project will display a big picture of data warehousing, a good practice in 
 Develop a modern data warehouse using PostgreSQL server to cosolidate sales data, enabling analytical reposting and informed decision-making.
 
 #### Specifications
-_ **Data Sources** :
+- **Data Sources** :
                 Import data from two source systems(ERP & CRM) provided as CSV files.
                 
-_ **Data Quality** :
+- **Data Quality** :
                 Cleans and resolve data quality issues prior to analysis.
                 
 _ **Integration** :
