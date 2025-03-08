@@ -5,13 +5,13 @@ This project demonstrates best practices in data warehousing, data engineering, 
 
 ⸻
 
-🎯 Objective
+## 🎯 Objective
 
 Develop a modern data warehouse using PostgreSQL to consolidate sales data from multiple sources, enabling analytical reporting and data-driven decision-making.
 
 ⸻
 
-📌 Project Specifications
+## 📌 Project Specifications
 
 ✔ Data Sources 📥
 Import data from two source systems (ERP & CRM) provided as CSV files.
@@ -30,7 +30,7 @@ Provide clear documentation of the data model to support both business stakehold
 
 ⸻
 
-👤 About Me
+## 👤 About Me
 
 Hi, I’m Javad! 👋
 I am a data analyst with a strong background in mathematics and a solid understanding of economics and business. I am passionate about leveraging data to drive insights and strategic decisions.
