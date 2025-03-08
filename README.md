@@ -1,8 +1,4 @@
-Sure! Here’s a more professional and well-structured version of your README.md, incorporating emojis for better readability and engagement:
-
-⸻
-
-📊 SQL Data Warehouse & Analytics Project
+#### 📊 SQL Data Warehouse & Analytics Project
 
 Welcome to the Data Warehouse & Analytics Project repository! 🚀
 This project demonstrates best practices in data warehousing, data engineering, and analytics, providing a structured approach to consolidating and analyzing sales data.
@@ -38,7 +34,3 @@ Provide clear documentation of the data model to support both business stakehold
 
 Hi, I’m Javad! 👋
 I am a data analyst with a strong background in mathematics and a solid understanding of economics and business. I am passionate about leveraging data to drive insights and strategic decisions.
-
-⸻
-
-🔹 Feel free to explore the repository and contribute! 🚀
