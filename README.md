@@ -1,4 +1,4 @@
-# 📊 SQL Data Warehouse & Analytics Project
+# 📊 Data Warehouse & Analytics Project
 
 Welcome to the Data Warehouse & Analytics Project repository! 🚀
 This project demonstrates best practices in data warehousing, data engineering, and analytics, providing a structured approach to consolidating and analyzing sales data.
