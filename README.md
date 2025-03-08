@@ -14,15 +14,15 @@ Develop a modern data warehouse using PostgreSQL server to cosolidate sales data
 - **Data Quality** :
                 Cleans and resolve data quality issues prior to analysis.
                 
-_ **Integration** :
+- **Integration** :
                 Combine both sources into a single, user-freindly data model designed for analytical query.
 
-_ **Scope** :
+- **Scope** :
                 Focus on the latest dataset only, historization of data is not required.
                 
-_ **Documentation** :
+- **Documentation** :
                 Provide clear documentation of the data model to support both business stakeholders and analytics team.
 
-_ **About me** :
+- **About me** :
             I am Javad. A data analyst with a strong mathematic background and have a good economic-business knowledge.
             
