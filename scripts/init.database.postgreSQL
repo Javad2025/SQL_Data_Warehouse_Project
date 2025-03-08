@@ -1,9 +1,9 @@
-CREATE DATABASE DataWarehouse
+### Step1: CREATE DATABASE DataWarehouse
 
-CREATE Schemas
+### step2: CREATE Schemas
 
-CREATE SCHEMA bronze;
+### Step3: CREATE SCHEMA bronze;
 
-CREATE SCHEMA silver;
+          CREATE SCHEMA silver;
 
-CREATE SCHEMA gold;
+          CREATE SCHEMA gold;
