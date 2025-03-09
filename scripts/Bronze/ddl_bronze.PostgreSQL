@@ -1,0 +1,114 @@
+-- 🏛 BRONZE LAYER: RAW DATA STORAGE
+-- ---------------------------------
+-- The Bronze Layer stores raw, unprocessed data from various source systems 
+-- (CRM, ERP, etc.) before any transformations or cleaning. 
+-- This ensures we always have an original copy of the data.
+
+-- 📌 Key Features of the Bronze Layer:
+-- ✅ Stores data as-is from source systems.
+-- ✅ Provides a structured schema for organizing data.
+-- ✅ Acts as a foundation for further transformation and analytics.
+-- ✅ Useful for historical tracking and auditing.
+
+-- 🔄 STEP 1: Create Tables (Drop if they already exist to avoid duplication)
+-- -------------------------------------------------------------------------
+
+-- 📌 CRM Customer Information Table
+-- ---------------------------------
+DROP TABLE IF EXISTS bronze.crm_cust_info;
+CREATE TABLE bronze.crm_cust_info (
+    cst_id INT,                        -- Unique Customer ID
+    cst_key VARCHAR(50),               -- Unique Customer Key
+    cst_firstname VARCHAR(50),         -- First Name
+    cst_lastname VARCHAR(50),          -- Last Name
+    cst_marital_status VARCHAR(50),    -- Marital Status (Single, Married, etc.)
+    cst_gndr VARCHAR(50),              -- Gender
+    cst_create_date DATE               -- Account Creation Date
+);
+-- 🔍 Verify Table
+SELECT * FROM bronze.crm_cust_info LIMIT 10;
+-- 🔄 Reset Data if Needed
+-- TRUNCATE TABLE bronze.crm_cust_info;
+
+-- 📌 CRM Product Information Table
+-- ---------------------------------
+DROP TABLE IF EXISTS bronze.crm_prd_info;
+CREATE TABLE bronze.crm_prd_info (
+    prd_id INT,                        -- Unique Product ID
+    prd_key VARCHAR(50),               -- Unique Product Key
+    prd_nm VARCHAR(50),                -- Product Name
+    prd_cost INT,                      -- Product Cost
+    prd_line VARCHAR(50),              -- Product Line (e.g., Electronics, Furniture)
+    prd_start_dt TIMESTAMP,            -- Availability Start Date
+    prd_end_dt TIMESTAMP               -- Availability End Date
+);
+-- 🔍 Verify Table
+SELECT * FROM bronze.crm_prd_info LIMIT 10;
+-- 🔄 Reset Data if Needed
+-- TRUNCATE TABLE bronze.crm_prd_info;
+
+-- 📌 CRM Sales Details Table
+-- ---------------------------
+DROP TABLE IF EXISTS bronze.crm_sales_details;
+CREATE TABLE bronze.crm_sales_details (
+    sls_ord_num VARCHAR(50),           -- Sales Order Number
+    sls_prd_key VARCHAR(50),           -- Product Key (Linked to crm_prd_info)
+    sls_cust_id INT,                   -- Customer ID (Linked to crm_cust_info)
+    sls_order_dt INT,                   -- Order Date (Consider converting to TIMESTAMP)
+    sls_ship_dt INT,                    -- Shipping Date
+    sls_due_dt INT,                     -- Due Date for Payment
+    sls_sales INT,                      -- Total Sales Amount
+    sls_quantity INT,                   -- Quantity Sold
+    sls_price INT                        -- Product Price at the Time of Sale
+);
+-- 🔍 Verify Table
+SELECT * FROM bronze.crm_sales_details LIMIT 10;
+-- 🔄 Reset Data if Needed
+-- TRUNCATE TABLE bronze.crm_sales_details;
+
+-- 📌 ERP Location Data Table
+-- ---------------------------
+DROP TABLE IF EXISTS bronze.erp_loc_a101;
+CREATE TABLE bronze.erp_loc_a101 (
+    cid VARCHAR(50),                    -- Customer ID
+    cntry VARCHAR(50)                   -- Country Code
+);
+-- 🔍 Verify Table
+SELECT * FROM bronze.erp_loc_a101 LIMIT 10;
+-- 🔄 Reset Data if Needed
+-- TRUNCATE TABLE bronze.erp_loc_a101;
+
+-- 📌 ERP Customer Demographics Table
+-- -----------------------------------
+DROP TABLE IF EXISTS bronze.erp_cust_az12;
+CREATE TABLE bronze.erp_cust_az12 (
+    cid VARCHAR(50),                    -- Customer ID
+    bdate DATE,                         -- Birthdate
+    gen VARCHAR(50)                      -- Gender
+);
+-- 🔍 Verify Table
+SELECT * FROM bronze.erp_cust_az12 LIMIT 10;
+-- 🔄 Reset Data if Needed
+-- TRUNCATE TABLE bronze.erp_cust_az12;
+
+-- 📌 ERP Product Category Table
+-- ------------------------------
+DROP TABLE IF EXISTS bronze.erp_px_cat_g1v2;
+CREATE TABLE bronze.erp_px_cat_g1v2 (
+    id VARCHAR(50),                     -- Product ID
+    cat VARCHAR(50),                    -- Product Category (e.g., Electronics, Clothing)
+    subcat VARCHAR(50),                 -- Product Subcategory (e.g., Laptops, Shoes)
+    maintenance VARCHAR(50)              -- Maintenance Type (if applicable)
+);
+-- 🔍 Verify Table
+SELECT * FROM bronze.erp_px_cat_g1v2 LIMIT 10;
+-- 🔄 Reset Data if Needed
+-- TRUNCATE TABLE bronze.erp_px_cat_g1v2;
+
+-- ✅ FINAL CHECK: Ensure all tables exist
+-- ---------------------------------------
+SELECT table_name 
+FROM information_schema.tables 
+WHERE table_schema = 'bronze';
+
+
